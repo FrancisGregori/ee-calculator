@@ -1,11 +1,13 @@
 import React, { FC, memo, useCallback, useEffect, useRef } from 'react'
 
+import { useCalculatorContext } from 'main/context/CalculatorProvider'
 import { IKeypadButton } from 'main/types/keypadButton'
 
 import { Container } from './styles'
 
 const Button: FC<IKeypadButton> = ({ gridArea, value, color }) => {
   const buttonRef = useRef<HTMLButtonElement>()
+  const { handleCalculation } = useCalculatorContext()
 
   const handleKeyDown = useCallback(
     ({ key, keyCode }: { key: string; keyCode: string | number }) => {
@@ -20,6 +22,7 @@ const Button: FC<IKeypadButton> = ({ gridArea, value, color }) => {
   )
 
   const handleOnClick = () => {
+    handleCalculation(value)
     buttonRef.current?.blur()
   }
 
