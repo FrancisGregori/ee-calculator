@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-gsnTZi kPCwpg"
+    data-testid="calculator"
+  >
+    <header
+      class="sc-dkzDqf lhSXUY"
+    >
+      <svg
+        class="sc-hKMtZM fsDArr"
+      />
+      <h1
+        class="sc-eCYdqJ tMyMz"
+      >
+        EE Calculator
+      </h1>
+    </header>
+    <div
+      class="sc-jSMfEi gWjAWg"
+    >
+      <div
+        class="sc-gKXOVf gaUIPx"
+      >
+        <span
+          class="sc-iBkjds fzXjGf"
+        />
+        <small
+          class="sc-ftvSup iFhWjw"
+        >
+          0
+        </small>
+      </div>
+      <div
+        class="sc-papXJ hmXwZV"
+      >
+        <button
+          class="sc-bczRLJ gQUVyn"
+        >
+          AC
+        </button>
+        <button
+          class="sc-bczRLJ ipyojJ"
+        >
+          ÷
+        </button>
+        <button
+          class="sc-bczRLJ jlezhS"
+        >
+          ×
+        </button>
+        <button
+          class="sc-bczRLJ crdNkW"
+        >
+          −
+        </button>
+        <button
+          class="sc-bczRLJ kRLmJt"
+        >
+          7
+        </button>
+        <button
+          class="sc-bczRLJ dUMCed"
+        >
+          8
+        </button>
+        <button
+          class="sc-bczRLJ gordFS"
+        >
+          9
+        </button>
+        <button
+          class="sc-bczRLJ keLDUZ"
+        >
+          +
+        </button>
+        <button
+          class="sc-bczRLJ jUkKws"
+        >
+          4
+        </button>
+        <button
+          class="sc-bczRLJ kEhILu"
+        >
+          5
+        </button>
+        <button
+          class="sc-bczRLJ XvNRA"
+        >
+          6
+        </button>
+        <button
+          class="sc-bczRLJ fcrgRr"
+        >
+          =
+        </button>
+        <button
+          class="sc-bczRLJ HwUuW"
+        >
+          1
+        </button>
+        <button
+          class="sc-bczRLJ dXsgLK"
+        >
+          2
+        </button>
+        <button
+          class="sc-bczRLJ gdxaA"
+        >
+          3
+        </button>
+        <button
+          class="sc-bczRLJ jzQVjv"
+        >
+          0
+        </button>
+        <button
+          class="sc-bczRLJ hplbxF"
+        >
+          .
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
