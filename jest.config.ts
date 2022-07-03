@@ -4,7 +4,7 @@ const config: Config.InitialOptions = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   moduleDirectories: ['node_modules', 'src'],
-  setupFilesAfterEnv: ['./src/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/src/test/setupTests.ts'],
   collectCoverage: true, //  Statistical coverage
   coverageDirectory: 'coverage', //  The folder where the coverage results are output
   coverageThreshold: {
@@ -17,13 +17,17 @@ const config: Config.InitialOptions = {
     },
     //  The coverage requirement of the matched single file
     //  Wildcard configuration is also supported here
-    './src/**/*.{ts,tsx}': {
+    '<rootDir>/src/**/*.{ts,tsx}': {
       branches: 40,
       functions: 40,
       lines: 40,
       statements: 40,
     },
   },
+  transform: {
+    '^.+\\.svg$': 'jest-transformer-svg',
+  },
+  moduleNameMapper: { '\\.svg$': '<rootDir>/src/test/__mocks__/svg.tsx' },
 }
 
 export default config
