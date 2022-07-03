@@ -36,6 +36,7 @@
     "react/require-default-props": "off",
     "no-restricted-globals": "off",
     "consistent-return": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "import/order": [
       "error",
       {
