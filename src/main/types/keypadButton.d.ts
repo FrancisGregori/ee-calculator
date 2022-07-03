@@ -1,3 +1,8 @@
+import { CONSTANTS } from 'main/utils/constants'
+
+type Keys = keyof typeof CONSTANTS
+export type ValueTypes = typeof CONSTANTS[Keys]
+
 export interface IKeypadButton {
   gridArea:
     | 'clear'
@@ -17,23 +22,6 @@ export interface IKeypadButton {
     | 'seven'
     | 'eight'
     | 'nine'
-  value:
-    | 'AC'
-    | '/'
-    | '*'
-    | '-'
-    | '+'
-    | '='
-    | '.'
-    | '0'
-    | '1'
-    | '2'
-    | '3'
-    | '4'
-    | '5'
-    | '6'
-    | '7'
-    | '8'
-    | '9'
+  value: ValueTypes
   color?: string
 }

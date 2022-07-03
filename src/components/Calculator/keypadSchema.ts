@@ -1,79 +1,80 @@
 import { IKeypadButton } from 'main/types/keypadButton'
+import { CONSTANTS } from 'main/utils/constants'
 
 const keypadSchema: IKeypadButton[] = [
   {
     gridArea: 'clear',
-    value: 'AC',
+    value: CONSTANTS.CLEAR,
     color: '#FFA048',
   },
   {
     gridArea: 'divide',
-    value: '/',
+    value: CONSTANTS.DIVIDE,
     color: '#48BDFF',
   },
   {
     gridArea: 'multiply',
-    value: '*',
+    value: CONSTANTS.MULTIPLY,
     color: '#48BDFF',
   },
   {
     gridArea: 'minus',
-    value: '-',
+    value: CONSTANTS.MINUS,
     color: '#48BDFF',
   },
   {
     gridArea: 'seven',
-    value: '7',
+    value: CONSTANTS.SEVEN,
   },
   {
     gridArea: 'eight',
-    value: '8',
+    value: CONSTANTS.EIGHT,
   },
   {
     gridArea: 'nine',
-    value: '9',
+    value: CONSTANTS.NINE,
   },
   {
     gridArea: 'plus',
-    value: '+',
+    value: CONSTANTS.PLUS,
     color: '#48BDFF',
   },
   {
     gridArea: 'four',
-    value: '4',
+    value: CONSTANTS.FOUR,
   },
   {
     gridArea: 'five',
-    value: '5',
+    value: CONSTANTS.FIVE,
   },
   {
     gridArea: 'six',
-    value: '6',
+    value: CONSTANTS.SIX,
   },
   {
     gridArea: 'equal',
-    value: '=',
+    value: CONSTANTS.EQUAL,
     color: '#FFA048',
   },
   {
     gridArea: 'one',
-    value: '1',
+    value: CONSTANTS.ONE,
   },
   {
     gridArea: 'two',
-    value: '2',
+    value: CONSTANTS.TWO,
   },
   {
     gridArea: 'three',
-    value: '3',
+    value: CONSTANTS.THREE,
   },
   {
     gridArea: 'zero',
-    value: '0',
+    value: CONSTANTS.ZERO,
   },
   {
     gridArea: 'dot',
-    value: '.',
+    value: CONSTANTS.DOT,
   },
 ]
 

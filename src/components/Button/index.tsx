@@ -2,6 +2,7 @@ import React, { FC, memo, useCallback, useEffect, useRef } from 'react'
 
 import { useCalculatorContext } from 'main/context/CalculatorProvider'
 import { IKeypadButton } from 'main/types/keypadButton'
+import { CONSTANTS } from 'main/utils/constants'
 
 import { Container } from './styles'
 
@@ -11,7 +12,7 @@ const Button: FC<IKeypadButton> = ({ gridArea, value, color }) => {
 
   const handleKeyDown = useCallback(
     ({ key, keyCode }: { key: string; keyCode: string | number }) => {
-      if (key === value || (keyCode === 13 && value === '=')) {
+      if (key === value || (keyCode === 13 && value === CONSTANTS.EQUAL)) {
         buttonRef.current?.focus()
         setTimeout(() => {
           buttonRef.current?.blur()
@@ -36,11 +37,11 @@ const Button: FC<IKeypadButton> = ({ gridArea, value, color }) => {
 
   const handleLabel = () => {
     switch (value) {
-      case '/':
+      case CONSTANTS.DIVIDE:
         return <>&divide;</>
-      case '*':
+      case CONSTANTS.MULTIPLY:
         return <>&times;</>
-      case '-':
+      case CONSTANTS.MINUS:
         return <>&minus;</>
       default:
         return value

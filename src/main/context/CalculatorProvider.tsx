@@ -8,6 +8,7 @@ import React, {
 } from 'react'
 
 import useEventListener from 'main/hooks/useEventListener'
+import { CONSTANTS } from 'main/utils/constants'
 import { evaluate, format } from 'mathjs'
 
 interface IProps {
@@ -22,7 +23,12 @@ export const CalculatorContext = createContext<IProps>({
   handleCalculation: () => {},
 })
 
-const operators = ['/', '*', '-', '+']
+const operators = [
+  CONSTANTS.DIVIDE,
+  CONSTANTS.MULTIPLY,
+  CONSTANTS.MINUS,
+  CONSTANTS.PLUS,
+]
 
 export const useCalculatorContext = () => useContext(CalculatorContext)
 
@@ -39,7 +45,7 @@ export const CalculatorProvider: FC<{ children: ReactNode }> = ({
 
   const handleBackspace = () => {
     const lastChar = calculationValue.replace(/\s/g, '').split('').pop() || ''
-    const size = operators.includes(lastChar) ? 3 : 1
+    const size = operators.includes(lastChar as any) ? 3 : 1
     setCalculationValue(
       calculationValue.substring(0, calculationValue.length - size),
     )
@@ -47,7 +53,7 @@ export const CalculatorProvider: FC<{ children: ReactNode }> = ({
 
   const handleOperators = (key: string) => {
     const lastChar = calculationValue.replace(/\s/g, '').split('').pop() || ''
-    if (operators.includes(lastChar)) {
+    if (operators.includes(lastChar as any)) {
       setCalculationValue(
         `${calculationValue.substring(0, calculationValue.length - 3)} ${key} `,
       )
@@ -59,7 +65,7 @@ export const CalculatorProvider: FC<{ children: ReactNode }> = ({
   const handleNonOperators = (key: string) => {
     let val = `${calculationValue}${key}`
 
-    if (key === '.') {
+    if (key === CONSTANTS.DOT) {
       const totalOfDots = val?.split(' ')?.pop()?.match(/\./g)?.length || 0
 
       if (totalOfDots > 1) {
@@ -71,19 +77,22 @@ export const CalculatorProvider: FC<{ children: ReactNode }> = ({
   }
 
   const handleCalculation = (key: string): void => {
-    if (!isNaN(Number(key)) || (key === '.' && calculationValue.length > 0)) {
+    if (
+      !isNaN(Number(key)) ||
+      (key === CONSTANTS.DOT && calculationValue.length > 0)
+    ) {
       handleNonOperators(key)
     }
-    if (operators.includes(key)) {
+    if (operators.includes(key as any)) {
       handleOperators(key)
     }
-    if (key === 'AC') {
+    if (key === CONSTANTS.CLEAR) {
       clearCalculation()
     }
-    if (key === 'Backspace') {
+    if (key === CONSTANTS.BACKSPACE) {
       handleBackspace()
     }
-    if (key === 'Enter' || key === '=') {
+    if (key === CONSTANTS.ENTER || key === CONSTANTS.EQUAL) {
       setCalculationValue(displayValue.toString())
     }
   }
