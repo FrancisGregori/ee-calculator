@@ -66,6 +66,8 @@
         }
       }
     ],
-    "@typescript-eslint/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn",
+    "jsx-a11y/control-has-associated-label": "warn",
+    "react/button-has-type": "warn"
   }
 }
